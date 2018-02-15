@@ -42,7 +42,7 @@ public class BalancoTrimestral {
 		 for (int i = 3; i < 100; i += 3 ){
 	            System.out.println(i);
 	        }
-		
+		// verificando numero impar
 		 int x = 11;
 		 if(x % 2 == 0  ) {
 			 System.out.println("numero passado é par!");
