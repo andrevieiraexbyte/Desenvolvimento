@@ -9,7 +9,10 @@ public class BalancoTrimestral {
 		
 		int gastroTrimestral = gastosJaneiro + gastosFevereiro + gastosMarco;
 		
+		int mediaTrimestral = gastroTrimestral / 3;
+		
 		System.out.println("o total do gasto trimestral é: "+gastroTrimestral);
+		System.out.println("o total do gasto trimestral é: "+mediaTrimestral);
 	}
 
 }
