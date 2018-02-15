@@ -3,31 +3,27 @@ public class TestaFuncionario {
 
 	public static void main(String[] args) {
 
+		
+		
+		Empresa emp1 = new Empresa();
+		
+		
 		Funcionario f1 = new Funcionario();
+		f1.setNome("André Vieira");
+		f1.setSalario(1000);
+		
+		
+		emp1.adicionar(f1);
+		
 		Funcionario f2 = new Funcionario();
-		Data d1 = new Data(15,01,2000);
-
-		f1.nome = "teste";
-		f1.departamento = "Desenvolvimento";
-		f1.salario = 100;
-		f1.dataDeEntrada = new Data(16, 01, 2018);
-		f1.rg = "5854585";
-		f1.mostra();
-
-		f2.nome = "Abel Vieira";
-		f2.departamento = "TI";
-		f2.salario = 200;
-		f2.dataDeEntrada = new Data(9, 05, 2011);
-		f2.rg = "51554472";
-		f2.mostra();
-
-		f2 = f1;
-
-		if (f1 == f2) {
-			System.out.println("true");
-		} else {
-			System.out.println("false");
-		}
+		f2.setNome("Abel Vieira");
+		f2.setSalario(2000);
+		
+		emp1.adicionar(f2);
+		
+		emp1.getFuncionario(0).mostra();
+		emp1.getFuncionario(1).mostra();
+		emp1.mostraEmpregados();
 	}
 
 }
