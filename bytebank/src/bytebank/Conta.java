@@ -3,9 +3,9 @@ package bytebank;
 public class Conta {
 
 	private double saldo;
-	int agencia;
-	int numero;
-	Cliente titular;
+	private int agencia;
+	private int numero;
+	private Cliente titular;
 
 	public void deposita(double valor) {
 		this.saldo += valor;
@@ -29,7 +29,32 @@ public class Conta {
 		}
 		return false;
 	}
-	public double pegaSaldo() {// método que acessa atributo privado
+
+	public double getSaldo() {// método que acessa atributo privado
 		return this.saldo;
+	}
+
+	public int getAgencia() {
+		return this.agencia;
+	}
+
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
+
+	public int getNumero() {
+		return this.numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public Cliente getTitular() {
+		return this.titular;
+	}
+
+	public void setTitular(Cliente titular) {
+		this.titular = titular ;
 	}
 }
