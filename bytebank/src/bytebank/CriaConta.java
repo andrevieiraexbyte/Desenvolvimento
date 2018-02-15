@@ -4,15 +4,13 @@ public class CriaConta {
 
 	public static void main(String[] args) {
 
-		Conta primeiraConta = new Conta();
-		Conta segundaConta = new Conta();
-		Cliente cliente = new Cliente();
+		Conta primeiraConta = new Conta(545, 197245);// utilizando construtor para passar valores 
+
+		Cliente cliente = new Cliente("André vieira","041.555.555-55","Programador");// inicializando construtores
 
 		primeiraConta.deposita(500);
-		segundaConta.deposita(1000);
 
-		System.out.println(primeiraConta.getSaldo()+" Primeira Conta");// acessando o saldo encapsulado
-		System.out.println(segundaConta.getSaldo()+" Segunda Conta");
+		System.out.println(primeiraConta.getSaldo() + " Primeira Conta");// acessando o saldo encapsulado
 
 		// boolean conseguilRetirar = primeiraConta.saca(100);
 
@@ -26,28 +24,21 @@ public class CriaConta {
 		// System.out.println(conseguilTranferir);
 
 		// utilizando composição de objetos
-		 cliente.setNome("André Vieira");
-		 cliente.setCpf("222.222.222-22");
-		 cliente.setProfissao("Programador");
-		 
-		 cliente.setProfissao("Analista de Sistemas");
-		 
+		
+
 		
 
 		// System.out.println(primeiraConta.titular.nome);
 
-		primeiraConta.setAgencia(431);
-		System.out.println(primeiraConta.getAgencia()+" Numero da Agencia");
 		
-		primeiraConta.setNumero(159450);
-		System.out.println(primeiraConta.getNumero()+" Numero da Conta");
-		
+		System.out.println(primeiraConta.getAgencia() + " Numero da Agencia");
+		System.out.println(primeiraConta.getNumero() + " Numero da Conta");
+
 		primeiraConta.setTitular(cliente);
-		System.out.println(primeiraConta.getTitular().getNome()+" Nome do Titular");
-		System.out.println(primeiraConta.getTitular().getCpf()+" Numero do CPF");
-		System.out.println(primeiraConta.getTitular().getProfissao()+ " Profissão");
-		
-		
+		System.out.println(primeiraConta.getTitular().getNome() + " Nome do Titular");
+		System.out.println(primeiraConta.getTitular().getCpf() + " Numero do CPF");
+		System.out.println(primeiraConta.getTitular().getProfissao() + " Profissão");
+
 	}
 
 }

@@ -5,6 +5,12 @@ public class Cliente {
 	private String nome;
 	private String cpf;
 	private String profissao;
+	
+	public Cliente( String nome, String cpf, String profissao) {// incializando construtores com valores padrões
+		this.nome = nome;
+		this.cpf = cpf;
+		this.profissao = profissao;
+	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
