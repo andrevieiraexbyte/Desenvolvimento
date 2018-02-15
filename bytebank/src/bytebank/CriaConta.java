@@ -5,9 +5,18 @@ public class CriaConta {
 	public static void main(String[] args) {
 
 		Conta primeiraConta = new Conta(545, 197245);// utilizando construtor para passar valores 
+		Conta segundaConta = new Conta(545, 197245);// utilizando construtor para passar valores 
+		Conta terceiraConta = new Conta(545, 197245);// utilizando construtor para passar valores 
+		Conta quartaConta = new Conta(545, 197245);// utilizando construtor para passar valores 
+		
+		System.out.println(Conta.getTotal());//utilzando atributos e métodos statics
 
+		
+		
 		Cliente cliente = new Cliente("André vieira","041.555.555-55","Programador");// inicializando construtores
 
+		
+		
 		primeiraConta.deposita(500);
 
 		System.out.println(primeiraConta.getSaldo() + " Primeira Conta");// acessando o saldo encapsulado

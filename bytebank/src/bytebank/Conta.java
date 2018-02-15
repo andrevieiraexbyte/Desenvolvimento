@@ -6,11 +6,13 @@ public class Conta {
 	private int agencia;
 	private int numero;
 	private Cliente titular;
-	
+	private static int total = 0; // atributos static da classe e não do objeto
+
 	public Conta(int agencia, int numero) {
+		total++;
 		this.agencia = agencia;
 		this.numero = numero;
-		
+
 	}
 
 	public void deposita(double valor) {
@@ -61,6 +63,10 @@ public class Conta {
 	}
 
 	public void setTitular(Cliente titular) {
-		this.titular = titular ;
+		this.titular = titular;
+	}
+
+	public static int getTotal() {//get static da classe Conta
+		return Conta.total;
 	}
 }
