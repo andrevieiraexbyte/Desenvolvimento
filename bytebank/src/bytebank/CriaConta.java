@@ -8,22 +8,22 @@ public class CriaConta {
 		Conta segundaConta = new Conta();
 		Cliente cliente = new Cliente();
 
-		primeiraConta.saldo = 200;
-		segundaConta.saldo = 1000;
+		primeiraConta.deposita(200);
+		segundaConta.deposita(1000);
 
-		primeiraConta.deposita(50);
+		
 
-		System.out.println(primeiraConta.saldo);
+		System.out.println(primeiraConta.pegaSaldo());// acessando o saldo encapsulado
 
-		boolean conseguilRetirar = primeiraConta.saca(500);
+		boolean conseguilRetirar = primeiraConta.saca(100);
 
-		System.out.println(primeiraConta.saldo);
+		System.out.println(primeiraConta.pegaSaldo());
 		System.out.println(conseguilRetirar);
 
 		boolean conseguilTranferir = segundaConta.transfere(500, primeiraConta);
 
-		System.out.println(segundaConta.saldo);
-		System.out.println(primeiraConta.saldo);
+		System.out.println(segundaConta.pegaSaldo());
+		System.out.println(primeiraConta.pegaSaldo());
 		System.out.println(conseguilTranferir);
 
 		//utilizando composição de objetos	
