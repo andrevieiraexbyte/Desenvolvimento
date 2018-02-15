@@ -4,7 +4,7 @@ public class Funcionario {
 	String nome;
 	String departamento;
 	double salario;
-	String dataDeEntrada;
+	Data dataDeEntrada;
 	String rg;
 
 	void recebAumento(double aumentoSalario) {
@@ -19,7 +19,7 @@ public class Funcionario {
 		System.out.println(this.nome);
 		System.out.println(this.departamento);
 		System.out.println(this.salario);
-		System.out.println(this.dataDeEntrada);
+		System.out.println(this.dataDeEntrada.getFormatada());
 		System.out.println(this.rg);
 	}
 }
