@@ -8,7 +8,15 @@ public class CriaConta {
 		
 		primeiraConta.saldo = 200;
 		
+		primeiraConta.deposita(50);
+		
+
 		System.out.println(primeiraConta.saldo);
+		
+		boolean conseguilRetirar = primeiraConta.saca(500);
+		
+		System.out.println(primeiraConta.saldo);
+		System.out.println(conseguilRetirar);
 		
 	}
 
