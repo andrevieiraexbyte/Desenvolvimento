@@ -1,5 +1,5 @@
 
-public class Conta {
+public abstract class Conta {
 
 	protected double saldo;
 
@@ -12,10 +12,14 @@ public class Conta {
 	}
 
 	public void saca(double valor) {
-		this.saldo -= valor;
+		if(saldo >= valor) {
+			this.saldo -= valor;
+		}else {
+			throw new RuntimeException("Saldo insuficiente");
+		}
 	}
 
-	public void atualiza(double taxa) {
-		this.saldo += this.saldo*taxa;
-	}
+	public abstract void atualiza(double taxa);
+		
+	
 }

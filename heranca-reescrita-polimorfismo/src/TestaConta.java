@@ -3,11 +3,11 @@ public class TestaConta {
 
 	public static void main(String[] args) {
 		
-		Conta c = new Conta();
+		ContaCorrente c = new ContaCorrente();
 		Conta cc = new ContaCorrente();
 		Conta cp = new ContaPoupanca();
 		
-		
+		c.saca(50);
 		c.deposita(100);
 		cc.deposita(200);
 		cp.deposita(300);
