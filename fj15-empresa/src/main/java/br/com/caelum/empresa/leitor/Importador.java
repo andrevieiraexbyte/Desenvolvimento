@@ -7,16 +7,22 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.Collection;
+import java.util.LinkedHashSet;
 
 import br.com.caelum.empresa.modelo.Gasto;
 import br.com.caelum.empresa.modelo.Funcionario;
 
 public class Importador {
+	
 	private SimpleDateFormat df = new SimpleDateFormat("ddMMyyyy");
 
-	public List<Gasto> importa(InputStream entrada) throws ParseException {
+	public Collection<Gasto> importa(InputStream entrada) throws ParseException {
+		
 		Scanner leitor = new Scanner(entrada);
-		List<Gasto> gastos = new ArrayList<Gasto>();
+		Set<Gasto> gastos = new LinkedHashSet<Gasto>();
+		
 		while (leitor.hasNextLine()) {
 			String line = leitor.nextLine();
 			String tipoDeGasto = line.substring(0, 6);
@@ -27,11 +33,11 @@ public class Importador {
 			String dataNascTxt = line.substring(56);
 			double valor = Double.parseDouble(valorTxt);
 			int matricula = Integer.parseInt(matriculaTxt);
-			
+
 			Calendar dataNascimento = dataNascimento(dataNascTxt);
-			
+
 			Calendar dataDespesa = dataDespesa(dataGastoTxt);
-			
+
 			Funcionario funcionario = new Funcionario(nome, matricula, dataNascimento);
 			gastos.add(new Gasto(valor, tipoDeGasto, funcionario, dataDespesa));
 		}

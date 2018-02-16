@@ -9,21 +9,17 @@ import br.com.caelum.empresa.modelo.Gasto;
 public class TestaGasto {
 
 	public static void main(String[] args) {
-		
-		Calendar dataNascimento = new GregorianCalendar(2018, 01, 16) ;
-		
-		Funcionario funcionario = new Funcionario("André Vieira", 10, dataNascimento );
-		
 		Calendar hoje = Calendar.getInstance();
-		
-		Gasto gasto1 = new Gasto(40, "taxi", funcionario, hoje);
-		Gasto gasto2 = new Gasto(40, "taxi", funcionario, hoje);
-		Gasto gasto3 = new Gasto(40, "taxi", funcionario, hoje);
+        GregorianCalendar nascimento = new GregorianCalendar(1989, 3, 14);
+        Funcionario funcionario = new Funcionario("VinÃ­cius", 9, nascimento);
 
-		System.out.println(gasto1);
-		System.out.println(gasto2);
-		System.out.println(gasto3);
-		
-		
+        Gasto gasto = new Gasto(40.0, "taxi", funcionario, hoje);
+        Gasto gasto1 = new Gasto(40.0, "taxi", funcionario, hoje);
+        Gasto gasto2 = new Gasto(40.0, "taxi", funcionario, hoje);
+
+        System.out.println(gasto);
+        System.out.println(gasto1);
+        System.out.println(gasto2);
 	}
+	
 }

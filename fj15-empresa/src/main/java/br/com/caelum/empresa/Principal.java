@@ -6,12 +6,11 @@ import java.util.GregorianCalendar;
 import br.com.caelum.empresa.modelo.Funcionario;
 
 public class Principal {
+
 	public static void main(String[] args) {
-
-		Calendar dataNascimento = new GregorianCalendar(2018, 16, 01);
-		Funcionario funcionario = new Funcionario("André", 25, dataNascimento);
-
-		System.out.println(funcionario);
-		
+		Calendar dataNascimento = new GregorianCalendar(1985, 3, 18);
+	    Funcionario funcionario = new Funcionario("JosÃ©", 25, dataNascimento);
+	    System.out.println(funcionario);
 	}
+
 }

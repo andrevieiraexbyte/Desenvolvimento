@@ -8,20 +8,70 @@ public class Gasto {
 	private String tipo;
 	private Funcionario funcionario;
 	private Calendar data;
-	
 
-	@Override
-	public String toString() {
-		
-		return tipo + " do " + funcionario;
-	}
-	
-	public Gasto(double valor, String tipo, Funcionario funcionario, Calendar data) {
+	public Gasto(double valor, String tipo, Funcionario funcionario,
+			Calendar data) {
 		super();
 		this.valor = valor;
 		this.tipo = tipo;
 		this.funcionario = funcionario;
 		this.data = data;
+	}
+	
+	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((data == null) ? 0 : data.hashCode());
+		result = prime * result + ((funcionario == null) ? 0 : funcionario.hashCode());
+		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(valor);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Gasto other = (Gasto) obj;
+		if (data == null) {
+			if (other.data != null)
+				return false;
+		} else if (!data.equals(other.data))
+			return false;
+		if (funcionario == null) {
+			if (other.funcionario != null)
+				return false;
+		} else if (!funcionario.equals(other.funcionario))
+			return false;
+		if (tipo == null) {
+			if (other.tipo != null)
+				return false;
+		} else if (!tipo.equals(other.tipo))
+			return false;
+		if (Double.doubleToLongBits(valor) != Double.doubleToLongBits(other.valor))
+			return false;
+		return true;
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return tipo + " do " + funcionario;
 	}
 
 	public double getValor() {
