@@ -66,7 +66,7 @@ public class Conta {
 		this.titular = titular;
 	}
 
-	public static int getTotal() {//get static da classe Conta
+	public static int getTotal() {// get static da classe Conta
 		return Conta.total;
 	}
 }
