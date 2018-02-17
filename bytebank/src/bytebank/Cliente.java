@@ -5,12 +5,10 @@ public class Cliente implements Autenticavel {
 	private String nome;
 	private String cpf;
 	private String profissao;
-	private int senha;
+	private Autenticacao autenticador;
 
-	public Cliente(String nome, String cpf, String profissao) {// incializando construtores com valores padrões
-		this.nome = nome;
-		this.cpf = cpf;
-		this.profissao = profissao;
+	public Cliente() {// criando composicao no constsrutor
+		this.autenticador = new Autenticacao();
 	}
 
 	public void setNome(String nome) {
@@ -38,16 +36,12 @@ public class Cliente implements Autenticavel {
 	}
 
 	@Override
-	public boolean autentica(int senha) {
-		if (this.senha == senha) {
-			return true;
-		}
-		return false;
-
+	public boolean autentica(int senha) { // fazendo composicao
+		return this.autenticador.autentica(senha);
 	}
 
 	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
+		this.autenticador.setSenha(senha);
 	}
 }

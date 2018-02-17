@@ -13,8 +13,8 @@ public class TesteReferencias {
 		adm.setNome("romário");
 		adm.setSenha(2222);
 
-		Cliente c = new Cliente("a", "v", "c");
-		c.setSenha(2222);
+		Cliente c = new Cliente();
+		c.setSenha(1);
 
 		SistemaInterno si = new SistemaInterno();
 		si.autentica(gt);

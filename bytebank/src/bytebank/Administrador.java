@@ -2,10 +2,10 @@ package bytebank;
 
 public class Administrador extends Funcionario implements Autenticavel {
 
-	private int senha;
+	private Autenticacao autenticador;
 
 	public Administrador() {
-
+		this.autenticador = new Autenticacao();
 	}
 
 	@Override
@@ -16,15 +16,12 @@ public class Administrador extends Funcionario implements Autenticavel {
 
 	@Override
 	public boolean autentica(int senha) {
-		if (this.senha == senha) {
-			return true;
-		}
-		return false;
+		return this.autenticador.autentica(senha);
 	}
 
 	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
+		this.autenticador.setSenha(senha);
 	}
 
 }
