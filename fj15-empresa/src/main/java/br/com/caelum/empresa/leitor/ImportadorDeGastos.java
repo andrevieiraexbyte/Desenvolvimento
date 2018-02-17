@@ -3,10 +3,8 @@ package br.com.caelum.empresa.leitor;
 import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -29,23 +27,21 @@ public class ImportadorDeGastos {
 			String matriculaTxt = line.substring(23, 26);
 			String nome = line.substring(26, 56);
 			String dataNascTxt = line.substring(56);
-			
+
 			double valor = Double.parseDouble(valorTxt);
 			int matricula = Integer.parseInt(matriculaTxt);
-			
+
 			Calendar dataNascimento = converteDataTxtParaCalendar(dataNascTxt);
 
 			Calendar dataDespesa = converteDataTxtParaCalendar(dataGastoTxt);
-			
-			Funcionario funcionario = new Funcionario(nome, matricula,
-					dataNascimento);
+
+			Funcionario funcionario = new Funcionario(nome, matricula, dataNascimento);
 			gastos.add(new Gasto(valor, tipoDeGasto, funcionario, dataDespesa));
 		}
 		return gastos;
 	}
 
-	private Calendar converteDataTxtParaCalendar(String dataNascTxt)
-			throws ParseException {
+	private Calendar converteDataTxtParaCalendar(String dataNascTxt) throws ParseException {
 		Calendar dataNascimento = Calendar.getInstance();
 		dataNascimento.setTime(df.parse(dataNascTxt));
 		return dataNascimento;
