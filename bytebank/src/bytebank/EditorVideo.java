@@ -2,7 +2,8 @@ package bytebank;
 
 public class EditorVideo extends Funcionario {
 
+	@Override
 	public double getBonificacao() {
-		return super.getBonificacao() + 150;
+		return 150;
 	}
 }

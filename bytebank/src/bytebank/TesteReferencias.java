@@ -6,7 +6,7 @@ public class TesteReferencias {
 
 		Gerente gt = new Gerente();
 		gt.setNome("André Vieira");
-		gt.setSalario(800);
+		gt.setSalario(1000);
 
 		EditorVideo ev = new EditorVideo();
 		ev.setNome("Abel");
