@@ -22,17 +22,25 @@ public class Curso {
 		return instrutor;
 	}
 
-	public List<Aula> getAulas() {
+	public List<Aula> getAulas() {// deixando a list imutavel
 		return Collections.unmodifiableList(aulas);
 	}
 
 	@Override
-	public String toString() {
+	public String toString() {// sobrescrevendo a string mãe
 		return "Curso [nome=" + nome + ", instrutor=" + instrutor + "]";
 	}
 
 	public void adiciona(Aula aula) {
 		this.aulas.add(aula);
+	}
+
+	public int getTempoTotalCursos() {// método que retorna o tempo total do curso
+		// int tempoTotalCurso = 0;
+		// for (Aula aula : aulas) {
+		// tempoTotalCurso += aula.getTempo();
+		// }
+		return this.aulas.stream().mapToInt(Aula::getTempo).sum();// utilizando stream java 8
 	}
 
 }
