@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TestaColecoes {
 
@@ -7,11 +8,13 @@ public class TestaColecoes {
 		ArrayList<String> nomes = new <String>ArrayList(); // so aceita string <String>
 
 		nomes.add("André Vieira");// adicionando no array
-		nomes.add("Abel");
+		nomes.add("Pedro");
 
-		System.out.println(nomes.get(1));// acessando a posição no array
+		// System.out.println(nomes.get(1));// acessando a posição no array
 
 		System.out.println(nomes.contains("André Vieira"));// passando elemento pra saber se contém na lista
+
+		Collections.sort(nomes);// ordenando por nomes
 
 		for (int i = 0; i < nomes.size(); i++) {// imprimindo todos dentro do arraylist
 
