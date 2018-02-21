@@ -28,7 +28,8 @@ public class Curso {
 
 	@Override
 	public String toString() {// sobrescrevendo a string mãe
-		return "Curso [nome=" + nome + ", instrutor=" + instrutor + "]";
+		return " Curso : " + this.getNome() + " \n instrutor : " + this.getInstrutor() + " \n tempo do curso : "
+				+ this.getTempoTotalCursos();
 	}
 
 	public void adiciona(Aula aula) {
