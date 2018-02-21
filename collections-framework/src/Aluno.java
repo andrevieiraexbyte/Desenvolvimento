@@ -6,6 +6,9 @@ public class Aluno {
 
 	public Aluno(String nome, int numeroMatricula) {
 		super();
+		if (nome == null) {
+			throw new NullPointerException("Nome não pode ser nulo.");// criando excption para nomes nulos
+		}
 		this.nome = nome;
 		this.numeroMatricula = numeroMatricula;
 	}
@@ -21,6 +24,34 @@ public class Aluno {
 	@Override
 	public String toString() {
 		return "Aluno : " + this.nome + ", Matricula :" + this.numeroMatricula;
+	}
+
+	@Override // gerando hashCode pela IDE utilzando algoritimo pronto
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + numeroMatricula;
+		return result;
+	}
+
+	@Override // equals sobrescrito pela IDE
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (numeroMatricula != other.numeroMatricula)
+			return false;
+		return true;
 	}
 
 }

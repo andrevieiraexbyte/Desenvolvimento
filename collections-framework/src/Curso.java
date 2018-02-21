@@ -55,4 +55,8 @@ public class Curso {
 	public Set<Aluno> getAlunos() {// recuperando alunos de maneira não modificavel.
 		return Collections.unmodifiableSet(alunos);
 	}
+
+	public boolean estaMatriculado(Aluno aluno) {
+		return this.alunos.contains(aluno);
+	}
 }
