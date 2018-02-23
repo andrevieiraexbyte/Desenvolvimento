@@ -12,12 +12,12 @@ public class TestandoIterator {
 		letras.add("B");
 		letras.add("C");
 
-		Iterator<String> iterando = letras.iterator();
-
-		while (iterando.hasNext()) {
-			System.out.println(iterando.next());
-
-		}
+	Iterator<String> iterando = letras.iterator();
+	
+	while (iterando.hasNext()) {
+		System.out.println(iterando.next());
+		
+	}
 	}
 
 }
