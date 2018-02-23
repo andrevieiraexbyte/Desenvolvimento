@@ -5,8 +5,7 @@ public class Exercicio {
 
 	public static void main(String[] args) {// utilizando map
 
-		Map<Integer, String> pessoas = new LinkedHashMap<>();// garante que o map retorna a uma lista por ordem de
-																// inserção
+		Map<Integer, String> pessoas = new LinkedHashMap<>();// garante que o map retorna a uma lista por ordem de inserção
 
 		pessoas.put(30, "André");
 		pessoas.put(32, "Wanderson");
