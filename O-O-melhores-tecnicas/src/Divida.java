@@ -1,40 +1,43 @@
+import java.util.ArrayList;
 
 public class Divida {
 
-	private double valorTotalDivida;
-	private double valorJaPago;
-	private String nomeCredor;
-	private String cnpj;
+	private double total;
+	private double valorPago;
+	private String credor;
+	private Cnpj cnpjCredor;
+	private ArrayList<Pagamentos> pagamentos = new ArrayList<Pagamentos>();
 
 	public double getValorTotalDivida() {
-		return valorTotalDivida;
+		return valorPago;
 	}
 
 	public void setValorTotalDivida(double valorTotalDivida) {
-		this.valorTotalDivida = valorTotalDivida;
+		this.valorPago = valorTotalDivida;
 	}
 
 	public String getNomeCredor() {
-		return nomeCredor;
+		return credor;
 	}
 
 	public void setNomeCredor(String nomeCredor) {
-		this.nomeCredor = nomeCredor;
-	}
-
-	public String getCnpj() {
-		return cnpj;
-	}
-
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
+		this.credor = nomeCredor;
 	}
 
 	public double getValorJaPago() {
-		return valorJaPago;
+		return valorPago;
 	}
 
 	public void paga(double valor) {
-		this.valorJaPago += valor;
+		this.valorPago += valor;
 	}
+
+	public Cnpj getCnpjCredor() {
+		return cnpjCredor;
+	}
+
+	public void setCnpjCredor(Cnpj cnpjCredor) {
+		this.cnpjCredor = cnpjCredor;
+	}
+
 }
