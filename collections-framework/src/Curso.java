@@ -2,6 +2,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class Curso {
@@ -49,6 +50,7 @@ public class Curso {
 
 	public void matricula(Aluno aluno) {// adiciona matricula de aluno
 		this.alunos.add(aluno);
+		// this.matriculaParaAluno.put(aluno.getNumeroMatricula(), aluno);
 
 	}
 
@@ -58,5 +60,15 @@ public class Curso {
 
 	public boolean estaMatriculado(Aluno aluno) {
 		return this.alunos.contains(aluno);
+	}
+
+	public Aluno buscaMatricula(int numero) {// buscando matricula passada no argumento
+		for (Aluno aluno : alunos) {
+			if (aluno.getNumeroMatricula() == numero) {
+				return aluno;// retornando aluno matriculado
+
+			}
+		}
+		throw new NoSuchElementException("matricula não econtrada!");// lançando excpetion não econtrando aluno.
 	}
 }
