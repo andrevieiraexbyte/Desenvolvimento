@@ -16,9 +16,14 @@ public class TestaCursoAluno {
 		javaColecoes.matricula(a2);
 		javaColecoes.matricula(a3);
 
-		javaColecoes.getAlunos().forEach(aluno -> {// expressões lambdas
-			System.out.println(aluno);
-		});
+		System.out.println("Quem é o aluno com matricula 24672?");
+		Aluno aluno = javaColecoes.buscaMatricula(24672);
+
+		System.out.println(aluno);
+
+		// javaColecoes.getAlunos().forEach(aluno -> {// expressões lambdas
+		// System.out.println(aluno);
+		// });
 	}
 
 }
