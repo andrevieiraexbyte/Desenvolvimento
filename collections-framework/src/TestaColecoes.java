@@ -5,7 +5,7 @@ public class TestaColecoes {
 
 	public static void main(String[] args) {
 
-		ArrayList<String> nomes = new <String>ArrayList(); // so aceita string <String>
+		ArrayList<String> nomes = new ArrayList<String>(); // so aceita string <String>
 
 		nomes.add("André Vieira");// adicionando no array
 		nomes.add("Pedro");
