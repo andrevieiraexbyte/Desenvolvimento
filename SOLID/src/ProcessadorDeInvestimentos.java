@@ -1,10 +1,11 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class ProcessadorDeInvestimentos {
 
 	public static void main(String[] args) {
 
-		for (ContaComum conta : contasDoBanco()) {
+		for (Object conta : contasDoBanco()) {
 			conta.rende();
 
 			System.out.println("Novo Saldo:");
@@ -12,11 +13,11 @@ public class ProcessadorDeInvestimentos {
 		}
 	}
 
-	private static List<ContaComum> contasDoBanco() {
+	private static List<Object> contasDoBanco() {
 		return Arrays.asList(umaContaCom(100), umaContaCom(150), contaDeEstudanteCom(200));
 	}
 
-	private static ContaComum contaDeEstudanteCom(double amount) {
+	private static ContaDeEstudante contaDeEstudanteCom(double amount) {
 		ContaDeEstudante c = new ContaDeEstudante();
 		c.deposita(amount);
 		return c;
@@ -27,4 +28,9 @@ public class ProcessadorDeInvestimentos {
 		c.deposita(valor);
 		return c;
 	}
+
+	public double getSaldo() {
+		return manipulador.getSaldo();
+	}
+
 }
