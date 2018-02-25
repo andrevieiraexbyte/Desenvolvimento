@@ -3,6 +3,7 @@ package java8;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class TestaCursos {
 
@@ -17,6 +18,18 @@ public class TestaCursos {
 
 		cursos.sort(Comparator.comparing(c -> c.getAlunos()));// com lambda
 		cursos.sort(Comparator.comparing(Curso::getAlunos));// com metodo reference
+
+		cursos.stream().filter(c -> c.getAlunos() > 50).forEach(c -> System.out.println(c.getNome()));// retornando
+																										// lista com
+																										// condição
+																										// usando lambda
+		cursos.stream().filter(c -> c.getAlunos() > 50).forEach(c -> System.out.println(c.getNome()));
+
+		Stream<String> nomes = cursos.stream().map(Curso::getNome);// utilzando map
+		cursos.stream().filter(c -> c.getAlunos() > 50).map(Curso::getAlunos).forEach(System.out::println);// utilizando
+																											// stream
+																											// com
+																											// filter
 
 	}
 
