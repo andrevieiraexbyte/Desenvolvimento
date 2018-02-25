@@ -23,7 +23,21 @@ public class TesteMetodosDefaults {
 
 		Collections.sort(palavras, ordenandoTamanhoString);
 
-		System.out.println(palavras);
+		palavras.forEach(palavra -> System.out.println(palavras));// utilizando funções lambdas
+
+		palavras.sort((s1, s2) -> {// utilizando lambda com classe anonima
+			if (s1.length() < s2.length())
+				return -1;
+			if (s1.length() > s2.length())
+				return 1;
+			return 0;
+		});
+
+		palavras.sort((s1, s2) -> // utilzando lambda com api do java
+		Integer.compare(s1.length(), s2.length()));
+
+		palavras.sort((s1, s2) -> s1.length() - s2.length());// utilzando a mesma api diminuindo os códigos atrves da
+																// lambda
 
 	}
 
