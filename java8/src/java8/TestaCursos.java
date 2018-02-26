@@ -1,5 +1,6 @@
 package java8;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -30,6 +31,9 @@ public class TestaCursos {
 																											// stream
 																											// com
 																											// filter
+		LocalDate agora = LocalDate.now();
+
+		System.out.println(agora);
 
 	}
 
