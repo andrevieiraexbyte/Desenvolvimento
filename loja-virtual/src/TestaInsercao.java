@@ -35,7 +35,7 @@ public class TestaInsercao {
 	private static void adiciona(String nome, String descricao, PreparedStatement stmt) throws SQLException {
 		stmt.setString(1, nome);
 		stmt.setString(2, descricao);
-		// lançando uma exception caso o conteudo de nome seja invalido
+		// lançando uma exception caso o conteudo de nome seja invalido.
 		if (nome.equals("Blueray")) {
 			throw new IllegalArgumentException("problema ocorrido");
 

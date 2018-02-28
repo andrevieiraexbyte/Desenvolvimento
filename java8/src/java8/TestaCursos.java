@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class TestaCursos {
-
+	// testando um commit
 	public static void main(String[] args) {
 
 		List<Curso> cursos = new ArrayList<>();
