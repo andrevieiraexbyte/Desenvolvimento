@@ -1,7 +1,9 @@
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import dao.ProdutosDAO;
 import modelo.Produto;
 
 public class TestaInsercaoEBuscaDeProduto {
