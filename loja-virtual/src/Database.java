@@ -1,11 +1,26 @@
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.hsqldb.jdbc.JDBCPool;
 
 public class Database {
 
-	public static Connection getConnection() throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/loja-virtual", "SA", "");
+	private DataSource dataSource;// interface
+
+	// criando um pool de conexões para se conectar apenza uma vez
+	Database() {// criando um pool de conexões
+		JDBCPool pool = new JDBCPool();
+		pool.setUrl("jdbc:hsqldb:hsql://localhost/loja-virtual");
+		pool.setUser("SA");
+		pool.setPassword("");
+		this.dataSource = pool;
+
+	}
+
+	Connection getConnection() throws SQLException {
+		Connection connection = dataSource.getConnection();// pegando a conexão do pool.
 		return connection;
 	}
 }
