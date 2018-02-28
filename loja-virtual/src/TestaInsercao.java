@@ -9,7 +9,7 @@ public class TestaInsercao {
 	// fazendo um teste no commit
 
 	public static void main(String[] args) throws SQLException {
-		try (Connection connection = new Database().getConnection()) {// abrindo uma conexao.
+		try (Connection connection = new ConnectionPool().getConnection()) {// abrindo uma conexao.
 			connection.setAutoCommit(false); // desativando autocommit das transaões
 			// realizadas
 

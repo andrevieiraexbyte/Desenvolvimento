@@ -7,7 +7,7 @@ public class TestaListagem {
 
 	public static void main(String[] args) throws SQLException {// adicinando sqlexception
 
-		Database database = new Database();// criando o pool uma única vez
+		ConnectionPool database = new ConnectionPool();// criando o pool uma única vez
 
 		for (int i = 0; i < 100; i++) {
 			// configuranro o driver para jdb hsqldb

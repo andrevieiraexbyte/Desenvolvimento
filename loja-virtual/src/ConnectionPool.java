@@ -5,12 +5,12 @@ import javax.sql.DataSource;
 
 import org.hsqldb.jdbc.JDBCPool;
 
-public class Database {
+public class ConnectionPool {
 
 	private DataSource dataSource;// interface
 
 	// criando um pool de conexões para se conectar apenza uma vez
-	Database() {// criando um pool de conexões
+	ConnectionPool() {// criando um pool de conexões
 		JDBCPool pool = new JDBCPool();
 		pool.setUrl("jdbc:hsqldb:hsql://localhost/loja-virtual");
 		pool.setUser("SA");
