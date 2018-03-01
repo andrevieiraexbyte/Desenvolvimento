@@ -10,7 +10,7 @@ public class TestaInsercaoEBuscaDeProduto {
 
 	public static void main(String[] args) throws SQLException {
 
-		Produto produto = new Produto("Mesa laranja", "Mesa com 4 cadeiras");
+		Produto produto = new Produto("Mesa vermelha", "Mesa com 6 cadeiras");
 
 		try (Connection con = new ConnectionPool().getConnection()) {
 			ProdutosDAO dao = new ProdutosDAO(con);
