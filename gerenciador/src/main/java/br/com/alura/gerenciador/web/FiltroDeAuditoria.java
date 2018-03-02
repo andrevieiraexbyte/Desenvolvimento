@@ -11,6 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 // filtrando as uri's que o usuario acessa
 
@@ -28,10 +29,18 @@ public class FiltroDeAuditoria implements Filter {
 			throws IOException, ServletException {
 
 		HttpServletRequest req = (HttpServletRequest) request;
+		HttpServletResponse resp = (HttpServletResponse) response;
 		String uri = req.getRequestURI();// guarda em uri o resqueste acessado
 
+		Cookie cookie = new Cookies(req.getCookies()).buscaUsuarioLogado();// buscando usuário logado
 		// validando cookie para usuario logado
 		String usuario = getUsuario(req);
+		if (cookie != null) {
+			usuario = cookie.getValue();
+			cookie.setMaxAge(10 * 60);// 10 minutos
+			resp.addCookie(cookie);
+
+		}
 
 		System.out.println("Usuario " + usuario + " acessando a URI: " + uri);// mostra qual usuario logada acessa uri
 		chain.doFilter(request, response);// continua executando resques e response depois de fazer a captura das uri's
@@ -41,17 +50,11 @@ public class FiltroDeAuditoria implements Filter {
 
 	private String getUsuario(HttpServletRequest req) {
 
-		String usuario = "<deslogado>";// mostra usuario deslogado acessando uri
-		Cookie[] cookies = req.getCookies();
-		if (cookies == null)// retorna usuario <deslogado>
-			return usuario;
-		for (Cookie cookie : cookies) {// retorna usuario logado
-			if (cookie.getName().equals("usuario.logado")) {
-				usuario = cookie.getValue();
+		Cookie cookie = new Cookies(req.getCookies()).buscaUsuarioLogado();
+		if (cookie == null)
+			return "<deslogado>"; // retorna usuario <deslogado>
 
-			}
-		}
-		return usuario;
+		return cookie.getValue();
 
 	}
 
