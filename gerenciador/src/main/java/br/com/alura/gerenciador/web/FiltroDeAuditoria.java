@@ -33,7 +33,7 @@ public class FiltroDeAuditoria implements Filter {
 		// validando cookie para usuario logado
 		String usuario = getUsuario(req);
 
-		System.out.println("Usuario acessando a URI: " + uri);
+		System.out.println("Usuario " + usuario + " acessando a URI: " + uri);// mostra qual usuario logada acessa uri
 		chain.doFilter(request, response);// continua executando resques e response depois de fazer a captura das uri's
 											// acessadas
 
@@ -41,10 +41,11 @@ public class FiltroDeAuditoria implements Filter {
 
 	private String getUsuario(HttpServletRequest req) {
 
+		String usuario = "<deslogado>";// mostra usuario deslogado acessando uri
 		Cookie[] cookies = req.getCookies();
-		String usuario = "<deslogado>";
-
-		for (Cookie cookie : cookies) {
+		if (cookies == null)// retorna usuario <deslogado>
+			return usuario;
+		for (Cookie cookie : cookies) {// retorna usuario logado
 			if (cookie.getName().equals("usuario.logado")) {
 				usuario = cookie.getValue();
 
