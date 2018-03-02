@@ -17,6 +17,24 @@ import br.com.alura.gerenciador.dao.EmpresaDAO;
 @WebServlet(urlPatterns = "/busca")
 public class BuscaEmpresa extends HttpServlet {
 
+	public BuscaEmpresa() {
+		System.out.println("Intanciando uma Servelet do tipo Buscaempresa" + this);
+	}
+
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+		System.out.println("Inicializando a Servelt" + this);
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		super.destroy();
+		System.out.println("Destruindo a Servelet" + this);
+	}
+
 	@Override // requisição e resposta
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
