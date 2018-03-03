@@ -17,8 +17,9 @@ Logado como ${usuarioLogado.email}</br>
     Senha: <input type="password" name="senha" /><br />
     <input type="submit" value="Login" />
 </form>
-<form action="logout" method="post">
-    <input type="submit" value="Logout" />
+<form action="executa" method="post">
+    <input type="hidden" name="tarefa" value="Logout" />
+    <input type="submit" value="Deslogar" />
 </form>
 </body>
 </html>
