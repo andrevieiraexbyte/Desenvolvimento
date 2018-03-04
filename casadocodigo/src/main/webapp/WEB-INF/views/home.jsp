@@ -7,6 +7,20 @@
 <title>Livros - Casa do Código</title>
 </head>
 <body>
-	Casa do código
+<!-- (25) crie uma table uma tr 2 tds com o conteúdo a ser mostrado na tela. rode o servidor -->
+
+	<h1>Casa do código</h1>
+	<table>
+	<tr> 
+		<td>Java 8 Prático</td>
+		<td>Certificação OCJP</td>
+	</tr>
+		
+	<tr> 
+		<td>TDD na Prática</td>
+		<td>Spring MVC</td>
+	</tr>
+		
+	</table>
 </body>
 </html>

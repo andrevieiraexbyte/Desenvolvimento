@@ -32,6 +32,8 @@ public class AppWebConfiguration {
 		resolver.setSuffix(".jsp");
 		return resolver;
 
-		// (23) configuramos tudo para que o spring rode nossas págians .jps
+		// (23) configuramos tudo para que o spring rode nossas págians .jps. rode o
+		// servidor!
+		// (24) vá para home.jps
 	}
 }
