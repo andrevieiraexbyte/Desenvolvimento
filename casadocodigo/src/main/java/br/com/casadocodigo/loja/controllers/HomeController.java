@@ -3,7 +3,8 @@ package br.com.casadocodigo.loja.controllers;// configurando o Controller em um 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-// (1) adicionando notation Controller
+//(26) lembrando que e preciso adicionar as denpendecias necessarias do maven para o projeto no arquivo pom.xml
+// (1) adicionando notation Controller o spring reconhece está classe como controller
 @Controller
 public class HomeController {
 	// (2) adicionando natation RequestMapping
@@ -19,6 +20,6 @@ public class HomeController {
 	public String index() {
 		// mostrando na tela
 		System.out.println("Entrando na home da casa do código");
-		return "home";
+		return "home";// observe que não temos extenção .jsp por causa do setPrefix
 	}// (4) precisamos criar class ServletSpringMVC
 }

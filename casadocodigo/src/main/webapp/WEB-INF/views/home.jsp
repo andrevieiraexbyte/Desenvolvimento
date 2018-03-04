@@ -7,7 +7,7 @@
 <title>Livros - Casa do Código</title>
 </head>
 <body>
-<!-- (25) crie uma table uma tr 2 tds com o conteúdo a ser mostrado na tela. rode o servidor -->
+<!-- (25) crie uma table uma tr 2 tds com o conteúdo a ser mostrado na tela. rode o servidor. vá para HomeController -->
 
 	<h1>Casa do código</h1>
 	<table>

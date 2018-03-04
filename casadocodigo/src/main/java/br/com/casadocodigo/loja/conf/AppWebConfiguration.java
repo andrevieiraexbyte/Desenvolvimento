@@ -22,14 +22,15 @@ public class AppWebConfiguration {
 	@Bean // (22)Spring não roda todos metodos por default esta notation diz que esté
 			// método é gerenciada pelo spring
 	// (18) crie método que retorne uma classe do spring IRVR
+	// este método o diretório das views
 	public InternalResourceViewResolver internalResourceViewResolver() {
 		// (19) instancie IRVT em um objeto
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		// (20) setando um prefixo de onde o arquivo jsp está.
-		resolver.setPrefix("/WEB-INF/views/");
+		resolver.setPrefix("/WEB-INF/views/"); // setPrefix definimos o local
 		// (21) setando um sufixo para que não precisemos colocar toda vez o .jsp nas
 		// chmadas
-		resolver.setSuffix(".jsp");
+		resolver.setSuffix(".jsp");// setSuffix definimos a extensão
 		return resolver;
 
 		// (23) configuramos tudo para que o spring rode nossas págians .jps. rode o
