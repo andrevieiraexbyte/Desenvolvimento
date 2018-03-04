@@ -9,11 +9,16 @@ public class HomeController {
 	// (2) adicionando natation RequestMapping
 	// mapeando a url acessada
 	@RequestMapping("/")
-
 	// (3)método index que exibira algo na tela
-	public void index() {
+	// (14) altere metodo de void para String e adicione um return "home.jsp"
+	// (15) criar dentro de WEB-INF/ uma pasta wiews e dentro dela um arquivo
+	// home.jsp
+	// (16) deixamos de usar index. html para utilizar arquivos .jsp!
+	// (17) vá para appWebConfiguration
 
-		// System.out.println("Entrando na home da casa do código");
-
+	public String index() {
+		// mostrando na tela
+		System.out.println("Entrando na home da casa do código");
+		return "home";
 	}// (4) precisamos criar class ServletSpringMVC
 }
