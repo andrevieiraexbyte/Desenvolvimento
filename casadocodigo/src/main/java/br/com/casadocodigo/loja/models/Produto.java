@@ -3,9 +3,10 @@ package br.com.casadocodigo.loja.models;
 import javax.persistence.Entity;
 
 //(49) adicione  natation para utilizar JPA
-//(50) adicione no pom.xml a dependencia no mavem para utilizar JPA-Hibernete
+//(50) adicione no pom.xml a dependencia no mavem para utilizar JPA-Hibernete vá para ProdutoDAO
 // veja a arquitetura que estamos utilizando, spring mvc, jpa-hibernete, mysql
-@Entity
+@Entity // estou declarando que esta classe e um entidade e pode ser usada para gravar
+		// seus dados em um banco de dados
 
 public class Produto {
 
