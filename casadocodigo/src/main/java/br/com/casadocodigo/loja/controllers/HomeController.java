@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 //(26) lembrando que e preciso adicionar as denpendecias necessarias do maven para o projeto no arquivo pom.xml
+//(27) dentro de views crie a pasta produtos e o arquivo form.js para criar um formulario
 // (1) adicionando notation Controller o spring reconhece está classe como controller
 @Controller
 public class HomeController {
