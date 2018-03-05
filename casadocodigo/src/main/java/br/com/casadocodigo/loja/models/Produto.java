@@ -8,6 +8,7 @@ public class Produto {
 	private int paginas;
 
 	// (44) gere os getters e setters dos atributos. vá para ProdutosController
+	// (46) gere o toString
 	public String getTitulo() {
 		return titulo;
 	}
@@ -30,6 +31,14 @@ public class Produto {
 
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
+	}
+
+	// sobrescrevendo o metodo toString que herda de object, se não fazemos isso só
+	// aparece como resultdado a referencia do objeto em memoria
+
+	@Override
+	public String toString() {
+		return "Produto [titulo=" + titulo + ", descricao=" + descricao + ", paginas=" + paginas + "]";
 	}
 
 }
