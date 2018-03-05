@@ -1,5 +1,12 @@
 package br.com.casadocodigo.loja.models;
 
+import javax.persistence.Entity;
+
+//(49) adicione  natation para utilizar JPA
+//(50) adicione no pom.xml a dependencia no mavem para utilizar JPA-Hibernete
+// veja a arquitetura que estamos utilizando, spring mvc, jpa-hibernete, mysql
+@Entity
+
 public class Produto {
 
 	// (43) crie os atributos que estão no formulario
@@ -8,7 +15,8 @@ public class Produto {
 	private int paginas;
 
 	// (44) gere os getters e setters dos atributos. vá para ProdutosController
-	// (46) gere o toString
+	// (46) gere o toString rode o servidor, vá para produtos controller
+
 	public String getTitulo() {
 		return titulo;
 	}

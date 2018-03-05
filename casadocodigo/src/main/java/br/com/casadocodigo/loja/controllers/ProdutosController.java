@@ -3,11 +3,17 @@ package br.com.casadocodigo.loja.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.casadocodigo.loja.daos.ProdutoDAO;
 import br.com.casadocodigo.loja.models.Produto;
 
 //(34) notation que esta classe seja um controller
 @Controller
 public class ProdutosController {
+
+	// (47) crie um tipo produtoDao de ProdutoDAO vamos criar acesso a banco de
+	// dados, crie uma Class ProdutoDao salve no
+	// packge daos.
+	private ProdutoDAO produtoDao;
 
 	// (35) crie o requesmapping que mapeia a url a cer acessada
 	@RequestMapping("/produtos/form")
@@ -36,7 +42,7 @@ public class ProdutosController {
 		// (45) agora so imprimimos produto
 		System.out.println(produto);
 
-		return "ok";
+		return "produtos/ok";
 		// (39) crie um arquivo em views/produtos ok.jps que retorna um mensagem de
 		// cadastrado com sucesso
 	}
