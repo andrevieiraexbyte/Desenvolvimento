@@ -1,5 +1,6 @@
 package br.com.casadocodigo.loja.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,6 +14,7 @@ public class ProdutosController {
 	// (47) crie um tipo produtoDao de ProdutoDAO vamos criar acesso a banco de
 	// dados, crie uma Class ProdutoDao salve no
 	// packge daos.
+	@Autowired // (54)notation autowired faz com que o spring injete o produtoDao
 	private ProdutoDAO produtoDao;
 
 	// (35) crie o requesmapping que mapeia a url a cer acessada
@@ -41,7 +43,9 @@ public class ProdutosController {
 		// modelo. veja que estamos utilizando arquitetura mvc
 		// (45) agora so imprimimos produto
 		System.out.println(produto);
-
+		// (55) prdodutoDao chama o método grava passando o produto.
+		// com isso estamos gravando nosso produto mandando para o banco
+		produtoDao.gravar(produto);
 		return "produtos/ok";
 		// (39) crie um arquivo em views/produtos ok.jps que retorna um mensagem de
 		// cadastrado com sucesso

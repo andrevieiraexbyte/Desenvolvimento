@@ -3,7 +3,13 @@ package br.com.casadocodigo.loja.daos;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.casadocodigo.loja.models.Produto;
+
+// repository mapeia nosso dao
+@Repository // (56) spring so injeta produtos que conhece que ele gerencia essa notation faz
+// com que o produtoDao seja gerenciado pelo spring
 
 public class ProdutoDAO {
 
