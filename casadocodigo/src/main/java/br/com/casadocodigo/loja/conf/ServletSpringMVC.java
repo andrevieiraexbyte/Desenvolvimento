@@ -17,7 +17,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		// (7) retorna classe de configuração do projeto web class AppWebConfiguration,
 		// crie está classe
 
-		return new Class[] { AppWebConfiguration.class };
+		return new Class[] { AppWebConfiguration.class, JPAConfiguration.class };// (79) add class a servletConfig
 	}
 
 	@Override
