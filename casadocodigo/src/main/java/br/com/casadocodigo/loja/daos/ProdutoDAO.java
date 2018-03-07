@@ -1,8 +1,11 @@
 package br.com.casadocodigo.loja.daos;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +25,13 @@ public class ProdutoDAO {
 	public void gravar(Produto produto) {// (48)crie um metodo que grava o Produto, faça import , vá para class Produto
 		// (53) chamando o manager.persiste passando o produto
 		manager.persist(produto);
+	}
+
+	// (82)add método para gerencia transação com entity manager
+	@Bean // (83)add o @Bean
+	JpaTransactionManager transactionManager(EntityManagerFactory emf) {// (84) passando EntityManagerFcatory para
+																		// associação
+		return new JpaTransactionManager();
 	}
 
 }
