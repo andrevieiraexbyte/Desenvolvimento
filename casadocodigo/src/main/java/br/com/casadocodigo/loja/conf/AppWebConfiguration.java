@@ -6,6 +6,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.casadocodigo.loja.controllers.HomeController;
+import br.com.casadocodigo.loja.daos.ProdutoDAO;
 
 //(9) adicionando notation WnableWebMvc
 @EnableWebMvc
@@ -15,7 +16,11 @@ import br.com.casadocodigo.loja.controllers.HomeController;
 // (12) rode servidor. erro 500 Could not resolve view with name '' in servlet
 // with name 'dispatcher'
 // (13)vá para HomeController
-@ComponentScan(basePackageClasses = { HomeController.class })
+@ComponentScan(basePackageClasses = { HomeController.class, ProdutoDAO.class }) // (57) adicionar ProdutoDao.calss pq
+																				// está em packges diferentes
+// (58)ao rodar o servidor teremos o erro entitymanageer factory, precisamos
+// criar o entitymanager factory
+// pelo spring vamos fazer isso, crie uma classe JPAcConfiguration
 public class AppWebConfiguration {
 
 	// toda classe gerenciada pelo spring e um Bean
