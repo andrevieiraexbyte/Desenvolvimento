@@ -1,6 +1,9 @@
 package br.com.casadocodigo.loja.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 //(49) adicione  natation para utilizar JPA
 //(50) adicione no pom.xml a dependencia no mavem para utilizar JPA-Hibernete vá para ProdutoDAO
@@ -9,6 +12,10 @@ import javax.persistence.Entity;
 		// seus dados em um banco de dados
 
 public class Produto {
+
+	// (78)deixando o id gerenciado pelo banco de dados. vá para ServletSpringMVC
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	// (43) crie os atributos que estão no formulario
 	private String titulo;
