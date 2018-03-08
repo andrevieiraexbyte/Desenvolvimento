@@ -29,7 +29,7 @@ public class JPAConfiguration {
 		// (66) informando o usuario do banco de dados.
 		dataSource.setUsername("root");
 		// (67) informando senha
-		dataSource.setPassword("");
+		dataSource.setPassword("root");
 		// (68) infromando url de conecxão
 		dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigo");
 		// (69) informando a classe do driver mysql para a conecxão

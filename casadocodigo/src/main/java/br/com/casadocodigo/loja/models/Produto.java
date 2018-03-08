@@ -13,10 +13,11 @@ import javax.persistence.Id;
 
 public class Produto {
 
-	// (78)deixando o id gerenciado pelo banco de dados. vá para ServletSpringMVC
+	// (78)deixando o id gerenciado pelo banco de dados crie int id. vá para
+	// ServletSpringMVC
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
+	private int id;
 	// (43) crie os atributos que estão no formulario
 	private String titulo;
 	private String descricao;
