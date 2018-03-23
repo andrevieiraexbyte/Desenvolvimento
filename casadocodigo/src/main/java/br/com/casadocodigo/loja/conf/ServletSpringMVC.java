@@ -34,7 +34,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	protected Filter[] getServletFilters() {
 		// (121) instancie um characterEncondingFilter add no retorno de filter
 		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-		// (122) set econding utf-8
+		// (122) set econding utf-8 , vá para produtosController
 		encodingFilter.setEncoding("UTF-8");
 		// (120) retorne um novo filter
 		return new Filter[] { encodingFilter };

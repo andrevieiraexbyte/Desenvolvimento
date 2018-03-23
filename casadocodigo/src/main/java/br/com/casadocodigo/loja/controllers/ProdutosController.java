@@ -14,6 +14,9 @@ import br.com.casadocodigo.loja.models.TipoPreco;
 
 //(34) notation que esta classe seja um controller
 @Controller
+// (123) rquestmapping /produtos, com isso não e necessario inserir em todos o
+// locais
+@RequestMapping("produtos")
 public class ProdutosController {
 
 	// (47) crie um tipo produtoDao de ProdutoDAO vamos criar acesso a banco de
@@ -23,7 +26,7 @@ public class ProdutosController {
 	private ProdutoDAO produtoDao;
 
 	// (35) crie o requesmapping que mapeia a url a cer acessada
-	@RequestMapping("/produtos/form")
+	@RequestMapping("/form")
 
 	// (36) crie o metodo que retorna o formulario criado em produtos/form. rode o
 	// servidor e teste.
@@ -41,7 +44,7 @@ public class ProdutosController {
 	// (38) notation requestmapping
 	// @RequestMapping("/produtos")
 	// (118) altere o requestmapping, vá para servletSpringMVC
-	@RequestMapping(value = "/produtos", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	// o metodo grava recebe os dados do formulario imprime os paramentros recebidos
 	// e return um ok
 	// (37) crie o método grava
@@ -65,7 +68,7 @@ public class ProdutosController {
 	}
 
 	// (117)mapeando metodo com method GET para diferenciar do request acima
-	@RequestMapping(value = "/produtos", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	// (110) crie um metodo lista e cria uma lista de produtos
 	public ModelAndView listar() {
 		// (111)lista de produtosDao, crie o metodo listar em produtoDao
