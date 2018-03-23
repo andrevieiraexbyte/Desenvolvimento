@@ -2,8 +2,11 @@ package br.com.casadocodigo.loja.conf;
 
 import java.util.Properties;
 
+import javax.persistence.EntityManagerFactory;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -55,5 +58,12 @@ public class JPAConfiguration {
 		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
 		// (77) mudando o retorno do método
 		return factoryBean;
+	}
+
+	// (82)add método para gerencia transação com entity manager
+	@Bean // (83)add o @Bean
+	JpaTransactionManager transactionManager(EntityManagerFactory emf) {// (84) passando EntityManagerFcatory para
+																		// associação, crie o banco de dados no mysql
+		return new JpaTransactionManager();
 	}
 }
