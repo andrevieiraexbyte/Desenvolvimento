@@ -1,5 +1,7 @@
 package br.com.casadocodigo.loja.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,5 +60,20 @@ public class ProdutosController {
 		return "produtos/ok";
 		// (39) crie um arquivo em views/produtos ok.jps que retorna um mensagem de
 		// cadastrado com sucesso
+	}
+
+	// (117)mapeando metodo
+	@RequestMapping("/produtos")
+	// (110) crie um metodo lista e cria uma lista de produtos
+	public ModelAndView listar() {
+		// (111)lista de produtosDao, crie o metodo listar em produtoDao
+		List<Produto> produtos = produtoDao.listar();
+		// (114) enviando lista para página com modelview instancie ModelAnview e o
+		// retorne
+		ModelAndView modelAndView = new ModelAndView("produtos/lista");// (115) adicionando a página a ser inserida
+		// (116) criando atributo que recebera os dados do jsp
+		modelAndView.addObject("produtos", produtos);
+
+		return modelAndView;
 	}
 }

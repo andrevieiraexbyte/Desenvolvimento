@@ -48,7 +48,7 @@
 			<label>${tipoPreco}</label>
 			<input type="text" name="precos[${status.index}].valor"><!-- (103)adicione o index e value de precos -->
 			<input type="hidden" name="precos[${status.index}].tipo"value="${tipoPreco}"><!-- (104)adicione indes e tipo, value tipoPreco -->
-		</div>
+		</div><!-- (105)crie um novo arquivo lista.jsp em produtos -->
 		</c:forEach>
 		<!-- (32) crie um button type="submit" para enviar os dados para o controller -->
 		<button type="submit">Cadastrar</button>
