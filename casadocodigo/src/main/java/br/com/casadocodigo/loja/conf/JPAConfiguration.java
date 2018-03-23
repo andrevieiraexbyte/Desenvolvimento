@@ -63,7 +63,8 @@ public class JPAConfiguration {
 	// (82)add método para gerencia transação com entity manager
 	@Bean // (83)add o @Bean
 	JpaTransactionManager transactionManager(EntityManagerFactory emf) {// (84) passando EntityManagerFcatory para
-																		// associação, crie o banco de dados no mysql
+																		// associação, crie o banco de dados no mysql,
+																		// vá para form.jsp
 		return new JpaTransactionManager();
 	}
 }

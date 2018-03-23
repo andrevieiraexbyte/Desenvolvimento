@@ -27,7 +27,19 @@
 		</div>
 		<!-- (32) crie um button type="submit" para enviar os dados para o controller -->
 		<button type="submit">Cadastrar</button>
-		
+		<!-- (85) crie 3 divs, lavel e input. para ebook, impresso e combo -->
+		<div>
+			<label>E-book</label>
+			<input type="text" name="ebook">
+		</div>
+		<div>
+			<label>Impresso</label>
+			<input type="text" name="impresso">
+		</div>
+		<div>
+			<label>Combo</label>
+			<input type="text" name="combo">
+		</div>
 	</form>
 	
 </body>
