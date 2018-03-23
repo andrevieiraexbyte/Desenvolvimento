@@ -3,9 +3,11 @@ package br.com.casadocodigo.loja.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
 import br.com.casadocodigo.loja.models.Produto;
+import br.com.casadocodigo.loja.models.TipoPreco;
 
 //(34) notation que esta classe seja um controller
 @Controller
@@ -22,8 +24,15 @@ public class ProdutosController {
 
 	// (36) crie o metodo que retorna o formulario criado em produtos/form. rode o
 	// servidor e teste.
-	public String form() {
-		return "produtos/form";
+	public ModelAndView form() {
+		// (98) modelAndView esté objeto manda pra tela
+		ModelAndView modelAndView = new ModelAndView("produtos/form");// construtor recebe o view name
+		// (99)podemos mandar objeto do model para o view
+		modelAndView.addObject("tipos", TipoPreco.values());
+		// (97) mande o TipoPreco para tela, todo enum tem um values do tipo array
+
+		// (100) mude o tipo de retorno para modelAndView
+		return modelAndView;
 	}
 
 	// (38) notation requestmapping

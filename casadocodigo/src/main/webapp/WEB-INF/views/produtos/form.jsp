@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <!-- (96) adicionando a jstl, vá para ProdutosController -->
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html > <!-- (28) deixe o arquivo no formato html5 nesta linha e tag meta charet=UTF-8 -->
 <html>
 <head>
@@ -25,8 +27,7 @@
 			<label>Páginas</label>
 			<input type="text" name="paginas">
 		</div>
-		<!-- (32) crie um button type="submit" para enviar os dados para o controller -->
-		<button type="submit">Cadastrar</button>
+		
 		<!-- (85) crie 3 divs, lavel e input. para ebook, impresso e combo -->
 		<div>
 			<label>E-book</label>
@@ -40,6 +41,15 @@
 			<label>Combo</label>
 			<input type="text" name="combo">
 		</div>
+		<!-- (95) crie um foreach para listar o tipo e o preco, adicioane a jstl no head desta página-->
+		<c:forEach items="" var="tipoPreco">
+		<div>
+			<label></label>
+			<input type="text" name="">
+		</div>
+		</c:forEach>
+		<!-- (32) crie um button type="submit" para enviar os dados para o controller -->
+		<button type="submit">Cadastrar</button>
 	</form>
 	
 </body>
