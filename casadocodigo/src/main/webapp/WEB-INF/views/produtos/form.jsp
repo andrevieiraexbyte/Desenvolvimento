@@ -28,7 +28,7 @@
 			<input type="text" name="paginas">
 		</div>
 		
-		<!-- (85) crie 3 divs, lavel e input. para ebook, impresso e combo -->
+		<!-- (85) crie 3 divs, lavel e input. para ebook, impresso e combo 
 		<div>
 			<label>E-book</label>
 			<input type="text" name="ebook">
@@ -40,12 +40,14 @@
 		<div>
 			<label>Combo</label>
 			<input type="text" name="combo">
-		</div>
+		</div>-->
 		<!-- (95) crie um foreach para listar o tipo e o preco, adicioane a jstl no head desta página-->
-		<c:forEach items="" var="tipoPreco">
+		<!-- (101) adicione em items, label e name tipos, tipoPreco e precos expression language -->
+		<c:forEach items="${tipos}" var="tipoPreco" varStatus="status"><!-- (102) adicione varStatus -->
 		<div>
-			<label></label>
-			<input type="text" name="">
+			<label>${tipoPreco}</label>
+			<input type="text" name="precos[${status.index}].valor"><!-- (103)adicione o index e value de precos -->
+			<input type="hidden" name="precos[${status.index}].tipo"value="${tipoPreco}"><!-- (104)adicione indes e tipo, value tipoPreco -->
 		</div>
 		</c:forEach>
 		<!-- (32) crie um button type="submit" para enviar os dados para o controller -->

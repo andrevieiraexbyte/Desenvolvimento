@@ -31,7 +31,7 @@ public class ProdutosController {
 		modelAndView.addObject("tipos", TipoPreco.values());
 		// (97) mande o TipoPreco para tela, todo enum tem um values do tipo array
 
-		// (100) mude o tipo de retorno para modelAndView
+		// (100) mude o tipo de retorno para modelAndView,vá para form.jsp
 		return modelAndView;
 	}
 
