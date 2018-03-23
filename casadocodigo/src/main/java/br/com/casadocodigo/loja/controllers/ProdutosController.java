@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
@@ -38,8 +39,9 @@ public class ProdutosController {
 	}
 
 	// (38) notation requestmapping
-
-	@RequestMapping("/produtos")
+	// @RequestMapping("/produtos")
+	// (118) altere o requestmapping
+	@RequestMapping(value = "/produtos", method = RequestMethod.POST)
 	// o metodo grava recebe os dados do formulario imprime os paramentros recebidos
 	// e return um ok
 	// (37) crie o método grava
@@ -62,8 +64,8 @@ public class ProdutosController {
 		// cadastrado com sucesso
 	}
 
-	// (117)mapeando metodo
-	@RequestMapping("/produtos")
+	// (117)mapeando metodo com method GET para diferenciar do request acima
+	@RequestMapping(value = "/produtos", method = RequestMethod.GET)
 	// (110) crie um metodo lista e cria uma lista de produtos
 	public ModelAndView listar() {
 		// (111)lista de produtosDao, crie o metodo listar em produtoDao
