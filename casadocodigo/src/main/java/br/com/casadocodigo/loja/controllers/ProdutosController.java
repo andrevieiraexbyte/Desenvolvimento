@@ -40,7 +40,7 @@ public class ProdutosController {
 
 	// (38) notation requestmapping
 	// @RequestMapping("/produtos")
-	// (118) altere o requestmapping
+	// (118) altere o requestmapping, vá para servletSpringMVC
 	@RequestMapping(value = "/produtos", method = RequestMethod.POST)
 	// o metodo grava recebe os dados do formulario imprime os paramentros recebidos
 	// e return um ok

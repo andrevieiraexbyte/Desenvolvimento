@@ -1,23 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Livros - Casa do Código</title>
+<title>Livros - Casa do CÃ³digo</title>
 </head>
 <body>
-<!-- (25) crie uma table uma tr 2 tds com o conteúdo a ser mostrado na tela. rode o servidor. vá para HomeController -->
+<!-- (25) crie uma table uma tr 2 tds com o conteÃºdo a ser mostrado na tela. rode o servidor. vÃ¡ para HomeController -->
 
-	<h1>Casa do código</h1>
+	<h1>Casa do cÃ³digo</h1>
 	<table>
 	<tr> 
-		<td>Java 8 Prático</td>
-		<td>Certificação OCJP</td>
+		<td>Java 8 PrÃ¡tico</td>
+		<td>CertificaÃ§Ã£o OCJP</td>
 	</tr>
 		
 	<tr> 
-		<td>TDD na Prática</td>
+		<td>TDD na PrÃ¡tica</td>
 		<td>Spring MVC</td>
 	</tr>
 		
